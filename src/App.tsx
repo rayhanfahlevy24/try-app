@@ -1,4 +1,4 @@
-import { Redirect, Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import Home from './pages/Home';
@@ -32,6 +32,13 @@ import '@ionic/react/css/palettes/dark.system.css';
 
 /* Theme variables */
 import './theme/variables.css';
+import Login from './pages/Login';
+import Register from './pages/Register';
+import Toko from './pages/Toko';
+import ProductDetail from './pages/ProductDetail';
+import PaymentConfirmation from './pages/PaymentConfirmation';
+import PaymentSuccess from './pages/PaymentSuccess';
+import PaymentGateway from './pages/PaymentGateway';
 
 setupIonicReact();
 
@@ -39,11 +46,29 @@ const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
       <IonRouterOutlet>
-        <Route exact path="/home">
+        <Route path="/">
           <Home />
         </Route>
-        <Route exact path="/">
-          <Redirect to="/home" />
+        <Route path="/login">
+          <Login />
+        </Route>
+        <Route path="/register">
+          <Register />
+        </Route>
+        <Route path="/toko">
+          <Toko />
+        </Route>
+        <Route path="/productdetail">
+          <ProductDetail />
+        </Route>
+        <Route path="/paymentconfirmation">
+          <PaymentConfirmation />
+        </Route>
+        <Route path="/paymentgateway">
+          <PaymentGateway />
+        </Route>
+        <Route path="/paymentsuccess">
+          <PaymentSuccess />
         </Route>
       </IonRouterOutlet>
     </IonReactRouter>
